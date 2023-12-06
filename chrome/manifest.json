@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "PoE Fandom Redirector",
+    "description": "Redirects pathofexile.fandom.com links to poewiki.net",
+    "permissions": [
+	"webNavigation",
+	"tabs"
+    ],
+    "host_permissions": [
+	"*://pathofexile.fandom.com/*"
+    ],
+    "icons": {
+	"48": "icon-48.ico",
+	"96": "icon-96.ico"
+    }
+}

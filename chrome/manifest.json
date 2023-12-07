@@ -9,8 +9,12 @@
     "host_permissions": [
 	"*://pathofexile.fandom.com/*"
     ],
+    "background": {
+	"service_worker": "url-redirector.js"
+    },
     "icons": {
 	"48": "icon-48.ico",
-	"96": "icon-96.ico"
-    }
+	"96": "icon-96.png"
+    },
+    "version": "1.0.0"
 }

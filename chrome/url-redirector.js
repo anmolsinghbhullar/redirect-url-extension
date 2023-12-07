@@ -11,8 +11,17 @@
 
 chrome.webNavigation.onBeforeNavigate.addListener(function(details) {
     if (details.url.includes("pathofexile.fandom.com")) {
-	// always redirects to landing page for now until we make sure the redirection works
-	var redirectUrl = "https://www.poewiki.net/wiki/Path_of_Exile_Wiki";
+	// debugging
+	console.log('onBeforeNavigate ', details.tabId, details.url);
+	var baseRedirectUrl = "https://www.poewiki.net";
+
+	// get the path to the specific page they're going to
+	var path = details.url.split("pathofexile.fandom.com")[1];
+
+	// now construct full url we're redirecting to
+	var redirectUrl = baseRedirectUrl + path;
+
+	// redirect
 	chrome.tabs.update(details.tabId, {url: redirectUrl});
     }
-}, {url: [{urlMatches : 'pathofexile.fandom.com'}]);
+}, {url: [{urlMatches : 'pathofexile.fandom.com'}]});
